@@ -1,9 +1,9 @@
 #pragma once
 #include<cmath>
 #include<iostream>
-extern const double KP;
-extern const double PK;
-extern const double P;
+extern const double KP;//弧度转角度
+extern const double PK;//角度转弧度
+extern const double P;//圆周率
 typedef int weight;
 class Edge
 {
@@ -59,8 +59,8 @@ public:
 	bool operator==(Point3D p);
 	bool isVisable();
 	void setVisable(bool v);
-	Point3D revlutePointz(double angle_z);
-	Point3D revlutePointxoy(double angle);
+	//Point3D revlutePointz(double angle_z);
+	//Point3D revlutePointxoy(double angle);
 
 	~Point3D() {};
 public:
