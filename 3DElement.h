@@ -1,9 +1,10 @@
 #pragma once
 #include<cmath>
 #include<iostream>
-extern const double KP;//弧度转角度
-extern const double PK;//角度转弧度
-extern const double P;//圆周率
+extern const double P=3.1415926;//圆周率
+extern const double KP=180/P;//弧度转角度
+extern const double PK=P/180;//角度转弧度
+
 typedef int weight;
 class Edge
 {
