@@ -51,7 +51,9 @@ public:
 	double x;
 	double y;
 	double z;
-
+public:
+	bool visable;
+public:
 	Point3D();
 	Point3D(double _x, double _y, double _z) :x(_x), y(_y), z(_z), visable(true) {}
 	double norm(void);//求模
@@ -60,12 +62,11 @@ public:
 	bool operator==(Point3D p);
 	bool isVisable();
 	void setVisable(bool v);
-	//Point3D revlutePointz(double angle_z);
-	//Point3D revlutePointxoy(double angle);
+	Point3D revlutePointz(double angle_z);
+	Point3D revlutePointxoy(double angle);
 
 	~Point3D() {};
-public:
-	bool visable;
+
 };//三维点定义
 
 

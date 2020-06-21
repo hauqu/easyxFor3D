@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClInclude Include="3DElement.h" />
     <ClInclude Include="graphics3D.h" />
+    <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="BugS.txt" />
     <Text Include="LogS.txt" />
     <Text Include="README.txt" />
+    <Text Include="旧版开发日志.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
