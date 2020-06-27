@@ -1,6 +1,53 @@
+
+/*
+Screen Screen::revlutePlanez(double angle_z)
+{
+	Screen fs;
+	fs.O = O.revlutePointz(angle_z);
+	fs.N = N.revluteVectorz(angle_z);
+	fs.X = X.revluteVectorz(angle_z);
+	fs.Y = Y.revluteVectorz(angle_z);
+	fs.ScreenW = this->ScreenW;
+	fs.ScreenH = this->ScreenH;
+	return  fs;
+}
+Screen Screen::revlutePlanexOy(double angle)
+{
+	Screen fs;
+	if (fs.O.x == 0 && fs.O.y == 0 && fs.O.z == 0)
+		fs.O = O;
+	else
+		fs.O = O.revlutePointxoy(angle);
+
+
+	fs.N = N.revluteVectxoy(angle);
+	fs.X = X;
+	fs.Y = Y.revluteVectxoy(-angle);
+	fs.ScreenW = this->ScreenW;
+	fs.ScreenH = this->ScreenH;
+	return  fs;
+}
+Screen Screen::movePlane(Vect v)
+{
+	Screen fs;
+	fs.ScreenW = this->ScreenW;
+	fs.ScreenH = this->ScreenH;
+	fs.O = (Vect)this->O + v;
+	fs.X = this->X;
+	fs.Y = this->Y;
+	return fs;
+
+}
+*/
+***********************************************************************
 #pragma once
 #include"3DElement.h"
+/*
 
+关于平面的中心点，以绝对零点的投影为准
+
+
+*/
 class Screen
 {
 public:
@@ -60,9 +107,6 @@ public:
 	Screen revlutePlanez(double angle_z);
 	Screen revlutePlanexOy(double angle);
 	Screen	movePlane(Vect v);
-
-
-
 	Screen operator*(double k)//屏幕缩放
 	{
 
@@ -96,42 +140,4 @@ Screen::Screen(Point3D o, Vect n, Vect x, Vect y, int sw, int sh)
 	Y = y;
 	ScreenW = sw;
 	ScreenH = sh;
-}
-Screen Screen::revlutePlanez(double angle_z)
-{
-	Screen fs;
-	fs.O = O.revlutePointz(angle_z);
-	fs.N = N.revluteVectorz(angle_z);
-	fs.X = X.revluteVectorz(angle_z);
-	fs.Y = Y.revluteVectorz(angle_z);
-	fs.ScreenW = this->ScreenW;
-	fs.ScreenH = this->ScreenH;
-	return  fs;
-}
-Screen Screen::revlutePlanexOy(double angle)
-{
-	Screen fs;
-	if (fs.O.x == 0 && fs.O.y == 0 && fs.O.z == 0)
-		fs.O = O;
-	else
-		fs.O = O.revlutePointxoy(angle);
-
-
-	fs.N = N.revluteVectxoy(angle);
-	fs.X = X;
-	fs.Y = Y.revluteVectxoy(-angle);
-	fs.ScreenW = this->ScreenW;
-	fs.ScreenH = this->ScreenH;
-	return  fs;
-}
-Screen Screen::movePlane(Vect v)
-{
-	Screen fs;
-	fs.ScreenW = this->ScreenW;
-	fs.ScreenH = this->ScreenH;
-	fs.O = (Vect)this->O + v;
-	fs.X = this->X;
-	fs.Y = this->Y;
-	return fs;
-
 }
